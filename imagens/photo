@@ -1,0 +1,7 @@
+from PIL import Image
+import requests
+from io import BytesIO
+
+response = requests.get('https://source.unsplash.com/random/1920x1080/?dog')
+img = Image.open(BytesIO(response.content))
+img.save('photo.jpg')
